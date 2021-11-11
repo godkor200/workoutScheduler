@@ -38,4 +38,4 @@ BUT 1차 마일스톤은 최소기능제품으로 앱출시하기!
 
 앱스토어에 올리는 최종 마무리까지 내년 2월 구정 전까지(?)
 
-[제목 없음](https://www.notion.so/b6cff9c309ee40928cebeb1c1840493b)
+[개발일정](https://www.notion.so/b6cff9c309ee40928cebeb1c1840493b)
