@@ -29,7 +29,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   /**
-   * 로그인 여부 로그인이 되어 있으면 greeting할 필요없음
+   * 로그인 여부 로그인이 되어 있으면 greeting할 필요없음!
    */
   const [login, setLogin] = useState(false);
   return (
