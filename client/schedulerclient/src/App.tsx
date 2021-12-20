@@ -36,8 +36,8 @@ const App = () => {
     <>
       <NavigationContainer>
         <Stack.Navigator initialRouteName='Greeting'>
-          <Stack.Screen name="Greeting" component={Greeting} />
-          <Stack.Screen name="Main" component={Main} />
+          <Stack.Screen name="Greeting" component={Greeting} options={{ headerShown: false }} />
+          <Stack.Screen name="Main" component={Main} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
 
