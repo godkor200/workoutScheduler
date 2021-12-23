@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -26,15 +27,17 @@ public class UserRepositoryTest extends ExerciseApplicationTests {
         System.out.println(newUser);
     }
 
-    @Test
-    public void read(){
-     Optional<User> user = userRepository.findById(2L);
-     user.ifPresent(s->{
-         System.out.println(s);
-         System.out.println(s.getEmail());
-     });
+//    @Test
+//    @Transactional
+//    public void read(){
+//     Optional<User> user = userRepository.findById(2L);
+//     user.ifPresent(s->{
+//        s.getPlanDetailList().stream().forEach(detail->{
+//            detail.getPlanId();
+//        });
+//     });
 
-    }
+  //  }
     @Test
     public void update(){
         Optional<User> user = userRepository.findById(2L);
