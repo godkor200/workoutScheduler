@@ -10,6 +10,7 @@ module.exports = {
           tests: ['./__tests__/'],
           '@components': './src/components',
           '@pages': './src/pages',
+          '@utils': './src/utils',
         },
       },
     ],

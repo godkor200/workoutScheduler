@@ -9,11 +9,12 @@
  */
 
 import React, { useState } from 'react';
+import Calender from '@components/main/calender';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { RootStackParamList } from 'types/global.interface'
-import Greeting from '@pages/greeting'
-import Main from '@pages/main'
+import { RootStackParamList } from 'types/global.interface';
+import Greeting from '@pages/greeting';
+import Main from '@pages/main';
 import {
   SafeAreaView,
   ScrollView,
@@ -22,7 +23,7 @@ import {
   Text,
   useColorScheme,
   View,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -35,16 +36,21 @@ const App = () => {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Greeting'>
-          <Stack.Screen name="Greeting" component={Greeting} options={{ headerShown: false }} />
-          <Stack.Screen name="Main" component={Main} options={{ headerShown: false }} />
+        <Stack.Navigator initialRouteName="Greeting">
+          <Stack.Screen
+            name="Greeting"
+            component={Greeting}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Main"
+            component={Main}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
-
     </>
   );
 };
-
-
 
 export default App;
