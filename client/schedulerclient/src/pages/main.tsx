@@ -15,9 +15,9 @@ import {
 
 export default function Main() {
   const [date, setDate] = useState(moment().utc(true).toDate());
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const deg = new Animated.Value(0);
+  const deg = useRef(new Animated.Value(0)).current;
+
   const resultDeg = deg.interpolate({
     inputRange: [0, 1],
     outputRange: ['0deg', '180deg'],
@@ -47,6 +47,7 @@ export default function Main() {
             size={14}
             color="black"
             onPress={() => {
+              console.log(deg);
               up();
             }}
           />
