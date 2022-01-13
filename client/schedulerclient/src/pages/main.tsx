@@ -15,7 +15,7 @@ import {
 
 export default function Main() {
   const [date, setDate] = useState(moment().utc(true).toDate());
-
+  const [calender, setCalender] = useState(false);
   const deg = useRef(new Animated.Value(0)).current;
 
   const resultDeg = deg.interpolate({
@@ -30,9 +30,9 @@ export default function Main() {
       useNativeDriver: true,
     }).start();
   };
-
+  const onClickCalender = () => setCalender(!calender);
   const animationStyles = { transform: [{ rotate: resultDeg }] };
-
+  console.log(calender);
   return (
     <SafeAreaView>
       <Text>{`오늘은 하체 하는 날`}</Text>
@@ -49,11 +49,16 @@ export default function Main() {
             onPress={() => {
               console.log(deg);
               up();
+              onClickCalender();
             }}
           />
         </Animated.View>
       </View>
-      <Calender date={date} onChange={(newDate) => setDate(newDate)} />
+      <Calender
+        calender={calender}
+        date={date}
+        onChange={(newDate) => setDate(newDate)}
+      />
     </SafeAreaView>
   );
 }
