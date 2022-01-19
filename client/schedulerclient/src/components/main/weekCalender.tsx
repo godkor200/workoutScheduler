@@ -1,22 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { dayConvent } from '@utils/common';
-import { addDays, format, getDate, isSameDay, startOfWeek } from 'date-fns';
+import MouthCalender from '@components/main/mouthCalender';
+import {
+  addDays,
+  format,
+  getDate,
+  isSameDay,
+  startOfWeek,
+  startOfMonth,
+  startOfDay,
+  endOfMonth,
+} from 'date-fns';
 
 interface Props {
+  calender: boolean;
   date: Date;
   onChange: (value: Date) => void;
 }
 
-export default function weekCalender({ date, onChange }: Props) {
+export default function weekCalender({ calender, date, onChange }: Props) {
   const [week, setWeek] = useState<WeekDay[]>([]);
 
   useEffect(() => {
-    const weekDays = getWeekDays(date);
+    const weekDays = getWeekDays(date, calender);
     setWeek(weekDays);
-  }, [date]);
+  }, [date, calender]);
 
-  return (
+  return week.length <= 8 ? (
     <View style={styles.container}>
       {week.map((weekDay) => {
         const textStyles = [styles.label];
@@ -43,6 +54,8 @@ export default function weekCalender({ date, onChange }: Props) {
         );
       })}
     </View>
+  ) : (
+    <MouthCalender />
   );
 }
 
@@ -91,12 +104,15 @@ type WeekDay = {
 };
 
 // get week days
-export const getWeekDays = (date: Date): WeekDay[] => {
-  const start = startOfWeek(date, { locale: { code: 'ko' }, weekStartsOn: 1 });
-
+export const getWeekDays = (date: Date, calender: boolean): WeekDay[] => {
+  const start = !calender
+    ? startOfWeek(date, { locale: { code: 'ko' }, weekStartsOn: 0 })
+    : startOfMonth(date);
+  const endDate = endOfMonth(date);
+  const weekOrMonth = !calender ? 7 : endDate.getDate();
   const final = [];
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < weekOrMonth; i++) {
     const date = addDays(start, i);
     final.push({
       formatted: format(date, 'EEE'),

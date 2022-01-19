@@ -32,13 +32,15 @@ export default function Main() {
   };
   const onClickCalender = () => setCalender(!calender);
   const animationStyles = { transform: [{ rotate: resultDeg }] };
-  console.log(calender);
+
   return (
     <SafeAreaView>
-      <Text>{`오늘은 하체 하는 날`}</Text>
-      <TouchableOpacity>
-        <Text>루틴 변경</Text>
-      </TouchableOpacity>
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>오늘은 {'\n'} 하체 하는 날</Text>
+        <TouchableOpacity style={styles.headerButton}>
+          <Text style={styles.headerButtonText}>루틴 변경</Text>
+        </TouchableOpacity>
+      </View>
       <View style={styles.container}>
         <Text>{weekOfMonth(date)}</Text>
         <Animated.View style={[animationStyles]}>
@@ -47,7 +49,6 @@ export default function Main() {
             size={14}
             color="black"
             onPress={() => {
-              console.log(deg);
               up();
               onClickCalender();
             }}
@@ -59,6 +60,9 @@ export default function Main() {
         date={date}
         onChange={(newDate) => setDate(newDate)}
       />
+      <View style={styles.routinCon}>
+        <Text style={styles.routinTitle}>오늘의 루틴</Text>
+      </View>
     </SafeAreaView>
   );
 }
@@ -66,5 +70,31 @@ export default function Main() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    padding: 20,
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    overflow: 'hidden',
+    margin: 20,
+    justifyContent: 'space-between',
+  },
+  headerText: {
+    fontSize: 26,
+  },
+  headerButton: {
+    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 9.5,
+    paddingHorizontal: 12,
+  },
+  headerButtonText: {
+    letterSpacing: -0.01,
+  },
+  routinCon: {
+    margin: 20,
+  },
+  routinTitle: {
+    fontSize: 20,
   },
 });

@@ -15,6 +15,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from 'types/global.interface';
 import Greeting from '@pages/greeting';
 import Main from '@pages/main';
+import Registration from '@pages/registration';
 import {
   SafeAreaView,
   ScrollView,
@@ -45,6 +46,11 @@ const App = () => {
           <Stack.Screen
             name="Main"
             component={Main}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Registration"
+            component={Registration}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

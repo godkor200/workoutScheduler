@@ -29,22 +29,18 @@ export default function Greeting({ navigation }: Props) {
           <Text style={styles.sectionTitleText}>반가워요👋</Text>
         </View>
         <View style={styles.sectionDescriptionSec}>
-          <Text style={styles.sectionDescriptionSecText}>
-            운동 스케줄러와 함께
-          </Text>
-          <Text style={styles.sectionDescriptionSecText}>
-            체계적으로 관리해봐요!
-          </Text>
+          <Text style={styles.sectionDescriptionSecText}>삼대오백도</Text>
+          <Text style={styles.sectionDescriptionSecText}>한걸음부터</Text>
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.buttonSec}>
-            <Text style={styles.buttonText}>스케줄러 사용방법 보기</Text>
+            <Text style={styles.buttonText}>득근일지 사용방법 보기</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonSec}
-            onPress={() => navigation.push('Main')}
+            onPress={() => navigation.navigate('Registration')}
           >
-            <Text style={styles.buttonText}>바로 시작하기</Text>
+            <Text style={styles.buttonText}>시작하기</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -78,6 +74,10 @@ const styles = StyleSheet.create({
   },
   buttonSec: {
     padding: 20,
+    marginHorizontal: 20,
+    marginBottom: 8,
+    borderRadius: 16,
+    backgroundColor: '#CACACA',
   },
   buttonText: {
     textAlign: 'center',
