@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RootStackParamList } from 'types/global.interface';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -22,6 +22,14 @@ type Props = {
 };
 
 export default function registration({ navigation }: Props) {
+  const [userData, setUserData] = useState({
+    userName: '',
+    pw: '',
+    gender: '',
+    tall: '',
+    weight: '',
+  });
+
   return (
     <SafeAreaView>
       <View style={styles.sectionContainer}>
@@ -53,7 +61,7 @@ export default function registration({ navigation }: Props) {
         </View>
         <TouchableOpacity
           style={styles.RegisterButton}
-          onPress={() => navigation.navigate('Main')}
+          onPress={() => navigation.navigate('MainStackScreen')}
         >
           <Text style={{ textAlign: 'center' }}>가입완료</Text>
         </TouchableOpacity>

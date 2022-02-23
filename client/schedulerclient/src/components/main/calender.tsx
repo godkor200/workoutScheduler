@@ -9,11 +9,7 @@ interface Props {
 }
 
 export default function calender({ calender, date, onChange }: Props) {
-  return (
-    <SafeAreaView>
-      <WeekCalendar calender={calender} date={date} onChange={onChange} />
-    </SafeAreaView>
-  );
+  return <WeekCalendar calender={calender} date={date} onChange={onChange} />;
 }
 
 const styles = StyleSheet.create({});

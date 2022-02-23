@@ -64,8 +64,8 @@ export default function mouthCalender() {
 
 const styles = StyleSheet.create({
   calendarTheme: {
-    backgroundColor: '#f2f2f2',
-    calendarBackground: '#f2f2f2',
+    backgroundColor: '#F4F6FA',
+    calendarBackground: '#F4F6FA',
     textDayHeaderFontSize: 15,
   },
 });

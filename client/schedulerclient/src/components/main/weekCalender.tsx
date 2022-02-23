@@ -61,6 +61,7 @@ export default function weekCalender({ calender, date, onChange }: Props) {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#F4F6FA',
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingVertical: 10,
@@ -68,6 +69,8 @@ const styles = StyleSheet.create({
   weekDayText: {
     color: 'gray',
     marginBottom: 5,
+    fontWeight: 'bold',
+    fontSize: 15,
   },
   label: {
     fontSize: 14,
