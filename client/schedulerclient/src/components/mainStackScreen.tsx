@@ -52,12 +52,12 @@ export default function mainStackScreen() {
       <Tab.Screen
         name="운동분석"
         component={Analysis}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
       <Tab.Screen
         name="설정"
         component={Setting}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
     </Tab.Navigator>
   );
