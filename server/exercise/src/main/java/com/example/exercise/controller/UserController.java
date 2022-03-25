@@ -38,14 +38,14 @@ public class UserController {
      }
      
      @PostMapping("/signup")
-     public ResponseEntity<UserDto> signUpUser(@Valid @RequestBody UserDto userDto) {
+     public ResponseEntity<String> signUpUser(@Valid @RequestBody UserDto userDto) {
           String user = userDto.toString();
           System.out.println("println ! " + user);
           if (userDto.getUsername()
                      .equals("") || userDto.getPassword()
                                            .isEmpty()) {
                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                                    .body(userDto);
+                                    .body("");
           }
           
           String username = userDto.getUsername();
@@ -55,8 +55,8 @@ public class UserController {
           int height = userDto.getHeight();
           int weight = userDto.getWeight();
           UserDto response = userService.saveUser(username, password, male, role, height, weight);
-          return ResponseEntity.status(HttpStatus.OK)
-                               .body(userDto);
+          String token = jwtTokenUtil.generateToken(username);
+          return ResponseEntity.ok(token);
      }
      
      @PostMapping("/signin")
@@ -67,11 +67,10 @@ public class UserController {
           
           Boolean result = userService.login(id, pw);
           if (!result) {
-               throw new IllegalArgumentException("Something Wrong");
+               throw new IllegalArgumentException("Something Wrong Or user not found");
           }
           String token = jwtTokenUtil.generateToken(id);
-          return ResponseEntity.status(HttpStatus.OK)
-                               .body(token);
+          return ResponseEntity.ok(token);
      }
      
 }

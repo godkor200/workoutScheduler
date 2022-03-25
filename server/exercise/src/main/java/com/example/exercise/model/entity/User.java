@@ -52,8 +52,6 @@ public class User {
      
      private LocalDateTime createdAt;
      
-     private String createdBy;
-     
      private LocalDateTime updateAt;
      
      private String updateBy;
@@ -64,14 +62,18 @@ public class User {
      private Set<UserRoutine> userRoutine;
      
      
-     public User(String username, String password, Boolean male, int height, int weight, String role) {
+     public User(String username, String password, Boolean male, int height, int weight, String role, LocalDateTime currentTime) {
           this.username = username;
           this.password = password;
           this.male = male;
           this.role = role;
           this.height = height;
           this.weight = weight;
+          this.createdAt = currentTime;
      }
+
+//     public User(String username, String password, Boolean male, int height, int weight, String role, LocalDateTime currentTime) {
+//     }
      
      
      public UserDto toDto() {

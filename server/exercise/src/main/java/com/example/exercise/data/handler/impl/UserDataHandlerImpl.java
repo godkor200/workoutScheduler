@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 @Transactional
 public class UserDataHandlerImpl implements UserDataHandler {
@@ -25,8 +27,8 @@ public class UserDataHandlerImpl implements UserDataHandler {
      public User saveUserEntity(String username, String password, Boolean male, String role, int height,
                                 int weight) {
 //          String pw = passwordEncoder.encode(password);
-          System.out.println(password);
-          User user = new User(username, password, male, height, weight, role);
+          LocalDateTime currentTime = LocalDateTime.now();
+          User user = new User(username, password, male, height, weight, role, currentTime);
           return userDAO.saveUser(user);
      }
      

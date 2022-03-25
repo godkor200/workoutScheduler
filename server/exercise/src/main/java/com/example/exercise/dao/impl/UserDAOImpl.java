@@ -25,7 +25,7 @@ public class UserDAOImpl implements UserDAO {
      @Override
      public Boolean matchPw(String username, String password) {
           User user = userRepository.findByUsername(username);
-          System.out.println(user);
+          if (user == null) return null;
           return user.getPassword()
                      .equals(password);
      }

@@ -1,5 +1,6 @@
 package com.example.exercise.util;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,7 +18,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
      
      @Override
      public void commence(HttpServletRequest request, HttpServletResponse response,
-                          AuthenticationException authException) throws IOException {
+                          AuthenticationException authException) throws IOException, ServletException {
           response.sendError(HttpServletResponse.SC_UNAUTHORIZED, authException.getMessage());
      }
 }

@@ -25,7 +25,7 @@ public class JwtAuthController {
      
      private JwtUserDetailsServiceImpl userDetailsService;
      
-     @PostMapping("/auth")
+     @PostMapping("/api/v1/authenticate")
      public String createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
           System.out.println(authenticationRequest + "authenticationRequest");
           authenticate(authenticationRequest.getUsername(), authenticationRequest.getUsername());
