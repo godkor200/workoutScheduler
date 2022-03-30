@@ -26,14 +26,14 @@ public class UserServiceImpl implements UserService {
      }
      
      @Override
+     public User findUserDetail(String username) {
+          return userRepository.findByUsername(username);
+     }
+     
+     @Override
      public UserDto saveUser(String username, String password, Boolean male, String role, int height, int weight) {
-          User user = userRepository.findByUsername(username);
-          if (user != null) {
-               throw new RuntimeException("기존의 있는 유저입니다.");
-          } else {
-               User userNew = userDataHandler.saveUserEntity(username, password, male, role, height, weight);
-               return new UserDto(userNew.getUsername(), userNew.getPassword(), userNew.isMale(), userNew.getRole(), userNew.getHeight(), userNew.getWeight(), userNew.getCreatedAt(), userNew.getUpdateAt());
-          }
+          User userNew = userDataHandler.saveUserEntity(username, password, male, role, height, weight);
+          return new UserDto(userNew.getUsername(), userNew.getPassword(), userNew.isMale(), userNew.getRole(), userNew.getHeight(), userNew.getWeight(), userNew.getCreatedAt(), userNew.getUpdateAt());
      }
      
      @Override

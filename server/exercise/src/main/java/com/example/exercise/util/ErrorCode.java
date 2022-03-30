@@ -2,14 +2,13 @@ package com.example.exercise.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 @AllArgsConstructor
 public enum ErrorCode {
-     NOT_FOUND(404, "COMMON-ERR-404", "PAGE NOT FOUND"),
+     NOT_FOUND(404, "COMMON-ERR-404", "NOT FOUND"),
      INTER_SERVER_ERROR(500, "COMMON-ERR-500", "INTER SERVER ERROR"),
-     EMAIL_DUPLICATION(400, "MEMBER-ERR-400", "EMAIL DUPLICATED"),
+     USERNAME_DUPLICATION(409, "MEMBER-ERR-400", "USER DUPLICATED"),
      ;
      
      private int status;

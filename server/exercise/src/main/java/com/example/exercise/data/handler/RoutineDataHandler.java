@@ -2,9 +2,9 @@ package com.example.exercise.data.handler;
 
 import com.example.exercise.model.entity.Routine;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public interface RoutineDataHandler {
      
-     Routine save(String routineName, LocalDateTime RoutineDate);
+     Routine save(String routineName, LocalDate routineDate);
 }

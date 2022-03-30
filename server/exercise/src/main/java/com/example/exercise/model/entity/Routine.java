@@ -1,21 +1,22 @@
 package com.example.exercise.model.entity;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
+import org.hibernate.Hibernate;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 @Entity
 public class Routine {
      
@@ -25,16 +26,36 @@ public class Routine {
      
      private String routineName;
      
-     private LocalDateTime exerciseTime;
+     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
+     private LocalDate exerciseTime;
      
+     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
      private LocalDateTime createdAt;
      
-     private String createdBy;
-     
+     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
      private LocalDateTime updateAt;
      
-     private String updateBy;
-     
      @OneToMany(mappedBy = "routine")
-     private List<UserRoutine> userRoutine;
+     private List<UserRoutine> userRoutine = new ArrayList<>();
+     
+     public Routine(String routineName, LocalDate routineDate, LocalDateTime timeNow) {
+          this.routineName = routineName;
+          this.exerciseTime = routineDate;
+          this.createdAt = timeNow;
+     }
+     
+     
+     @Override
+     public boolean equals(Object o) {
+          if (this == o) return true;
+          if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+               return false;
+          Routine routine = (Routine) o;
+          return id != null && Objects.equals(id, routine.id);
+     }
+     
+     @Override
+     public int hashCode() {
+          return getClass().hashCode();
+     }
 }

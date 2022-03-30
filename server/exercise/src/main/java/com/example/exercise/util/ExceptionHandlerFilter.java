@@ -1,5 +1,6 @@
 package com.example.exercise.util;
 
+import com.example.exercise.util.Exception.UsernameFromTokenException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;

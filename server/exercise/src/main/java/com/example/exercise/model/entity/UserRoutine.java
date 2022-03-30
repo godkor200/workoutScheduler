@@ -1,23 +1,34 @@
 package com.example.exercise.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name = "user_routine")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@IdClass(UserRoutineId.class)
+@ToString
 public class UserRoutine {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	@ManyToOne
-	@JoinColumn(name="user_id")
-	User user;
-
-	@ManyToOne
-	@JoinColumn(name="routine_id")
-	Routine routine;
+     
+     @Id
+     @ManyToOne
+     @JoinColumn(name = "routine_id")
+     private Routine routine;
+     
+     @Id
+     @ManyToOne
+     @JoinColumn(name = "user_id")
+     private User user;
+     
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+     private Long id;
+     
+     
 }

@@ -3,17 +3,14 @@ package com.example.exercise.model.entity;
 import com.example.exercise.dto.UserDto;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Set;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,6 +28,7 @@ import org.hibernate.Hibernate;
 @ToString
 @RequiredArgsConstructor
 @AllArgsConstructor
+//@NoArgsConstructor
 @Builder
 public class User {
      
@@ -50,16 +48,17 @@ public class User {
      
      private int weight;
      
+     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
      private LocalDateTime createdAt;
      
+     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
      private LocalDateTime updateAt;
      
      private String updateBy;
      
      //1:N
-     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-     @Exclude
-     private Set<UserRoutine> userRoutine;
+     @OneToMany(mappedBy = "user")
+     private List<UserRoutine> userRoutine = new ArrayList<>();
      
      
      public User(String username, String password, Boolean male, int height, int weight, String role, LocalDateTime currentTime) {
