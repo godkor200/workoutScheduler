@@ -1,16 +1,21 @@
 package com.example.exercise.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
+import org.hibernate.Hibernate;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import java.util.Objects;
 
 @Entity
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Exercise {
      
      @Id
@@ -34,5 +39,19 @@ public class Exercise {
      private LocalDateTime updateAt;
      
      @OneToMany(mappedBy = "exercise")
-     private List<RoutineExercise> routineExerciseList;
+     private List<RoutineExercise> routineExerciseList = new ArrayList<>();
+     
+     @Override
+     public boolean equals(Object o) {
+          if (this == o) return true;
+          if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+               return false;
+          Exercise exercise = (Exercise) o;
+          return id != null && Objects.equals(id, exercise.id);
+     }
+     
+     @Override
+     public int hashCode() {
+          return getClass().hashCode();
+     }
 }

@@ -2,7 +2,7 @@ package com.example.exercise.service.impl;
 
 import com.example.exercise.model.entity.User;
 import com.example.exercise.repository.UserRepository;
-import com.example.exercise.util.JwtUserDetails;
+import com.example.exercise.util.Jwt.JwtUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

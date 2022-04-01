@@ -1,7 +1,6 @@
 package com.example.exercise.dao.impl;
 
 import com.example.exercise.dao.RoutineDAO;
-import com.example.exercise.data.handler.RoutineDataHandler;
 import com.example.exercise.dto.RoutineDto;
 import com.example.exercise.model.entity.Routine;
 import com.example.exercise.model.entity.User;
@@ -13,12 +12,11 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Optional;
+
 
 @Service
 public class RoutineDAOImpl implements RoutineDAO {
-     
-     RoutineDataHandler routineDataHandler;
      
      RoutineRepository routineRepository;
      
@@ -31,29 +29,25 @@ public class RoutineDAOImpl implements RoutineDAO {
      }
      
      @Override
+     public Optional<Routine> findById(Long id) {
+          return routineRepository.findById(id);
+     }
+     
+     @Override
      public Routine saveRoutine(RoutineDto routine) {
-          
-          
           String routineName = routine.getRoutineName();
-          
           LocalDate exerciseTime = routine.getRoutineDate();
-          
           LocalDateTime createdAt = LocalDateTime.now();
-          
           Routine newRoutine = new Routine(routineName, exerciseTime, createdAt);
-          
           return routineRepository.save(newRoutine);
      }
      
      @Override
-     public UserRoutine saveUserRoutine(User user, Routine routine) {
-//          final List<UserRoutine> list = userRoutineRepository.findAllById(userId);
-          final UserRoutine newUserRoutine = new UserRoutine();
+     public void saveUserRoutine(User user, Routine routine) {
+          UserRoutine newUserRoutine = new UserRoutine();
           newUserRoutine.setUser(user);
           newUserRoutine.setRoutine(routine);
+          userRoutineRepository.save(newUserRoutine);
           
-          
-          return userRoutineRepository.save(newUserRoutine);
-//          return (UserRoutine) list;
      }
 }

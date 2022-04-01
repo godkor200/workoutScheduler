@@ -1,8 +1,8 @@
 package com.example.exercise.controller;
 
 import com.example.exercise.service.impl.JwtUserDetailsServiceImpl;
-import com.example.exercise.util.JwtRequest;
-import com.example.exercise.util.JwtTokenUtil;
+import com.example.exercise.util.Jwt.JwtRequest;
+import com.example.exercise.util.Jwt.JwtTokenUtil;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;

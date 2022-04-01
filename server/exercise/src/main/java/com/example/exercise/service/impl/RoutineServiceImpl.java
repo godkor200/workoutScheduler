@@ -9,6 +9,8 @@ import com.example.exercise.model.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class RoutineServiceImpl implements RoutineService {
      
@@ -19,6 +21,11 @@ public class RoutineServiceImpl implements RoutineService {
      @Autowired
      public void routineServiceImpl(RoutineDAO routineDAO) {
           this.routineDAO = routineDAO;
+     }
+     
+     @Override
+     public Optional<Routine> findById(Long id) {
+          return routineDAO.findById(id);
      }
      
      @Override

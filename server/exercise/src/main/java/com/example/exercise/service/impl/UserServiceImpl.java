@@ -1,6 +1,7 @@
 package com.example.exercise.service.impl;
 
-import com.example.exercise.data.handler.UserDataHandler;
+import com.example.exercise.dao.UserDAO;
+import com.example.exercise.dto.UserIdPwDto;
 import com.example.exercise.repository.UserRepository;
 import com.example.exercise.dto.UserDto;
 import org.springframework.stereotype.Service;
@@ -11,18 +12,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service
 public class UserServiceImpl implements UserService {
      
-     UserDataHandler userDataHandler;
      
      UserRepository userRepository;
      
-     @Autowired
-     public UserServiceImpl(UserDataHandler userDataHandler) {
-          this.userDataHandler = userDataHandler;
-     }
+     UserDAO userDAO;
+     
      
      @Autowired
-     public void UserDAOImpl(UserRepository userRepository) {
+     public void UserDAOImpl(UserRepository userRepository, UserDAO userDAO) {
           this.userRepository = userRepository;
+          this.userDAO = userDAO;
      }
      
      @Override
@@ -31,13 +30,16 @@ public class UserServiceImpl implements UserService {
      }
      
      @Override
-     public UserDto saveUser(String username, String password, Boolean male, String role, int height, int weight) {
-          User userNew = userDataHandler.saveUserEntity(username, password, male, role, height, weight);
-          return new UserDto(userNew.getUsername(), userNew.getPassword(), userNew.isMale(), userNew.getRole(), userNew.getHeight(), userNew.getWeight(), userNew.getCreatedAt(), userNew.getUpdateAt());
+     public User saveUser(UserDto userDto) {
+          return userDAO.saveUser(userDto.getUsername(), userDto.getPassword(), userDto.isMale(), userDto.getRole(), userDto.getHeight(), userDto.getWeight());
      }
      
      @Override
-     public Boolean login(String username, String password) {
-          return userDataHandler.loginUserEntity(username, password);
+     public Boolean login(UserIdPwDto userIdPwDto) {
+          User user = userRepository.findByUsername(userIdPwDto.getUsername());
+          if (user == null) {
+               return null;
+          }
+          return userDAO.matchPw(userIdPwDto.getUsername(), userIdPwDto.getPassword());
      }
 }

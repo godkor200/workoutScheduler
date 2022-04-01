@@ -1,19 +1,4 @@
-INSERT INTO USER (ID, USERNAME, PASSWORD, ROLE)
-VALUES (1, 'admin',
-        '$2a$08$lDnHPz7eUkSi6ao14Twuau08mzhWrL4kyZGGU5xfiGALO/Vxd5DOi',
-        'admin');
-INSERT INTO USER (ID, USERNAME, PASSWORD, ROLE)
-VALUES (2, 'user',
-        '$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 'user');
-
--- INSERT INTO AUTHORITY (AUTHORITY_NAME)
--- values ('ROLE_USER');
--- INSERT INTO AUTHORITY (AUTHORITY_NAME)
--- values ('ROLE_ADMIN');
---
--- INSERT INTO USER_AUTHORITY (USER_ID, AUTHORITY_NAME)
--- values (1, 'ROLE_USER');
--- INSERT INTO USER_AUTHORITY (USER_ID, AUTHORITY_NAME)
--- values (1, 'ROLE_ADMIN');
--- INSERT INTO USER_AUTHORITY (USER_ID, AUTHORITY_NAME)
--- values (2, 'ROLE_USER');
+INSERT INTO user (created_at, height, male, password, role,
+                  update_at, update_by, username, weight)
+VALUES ('2022-03-31 00:00:00.000000', 0, 1, '13241324', 'admin', NULL, NULL,
+        'godkor200', 0);

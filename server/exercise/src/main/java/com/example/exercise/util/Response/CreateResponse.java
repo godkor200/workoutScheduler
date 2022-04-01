@@ -1,4 +1,4 @@
-package com.example.exercise.util;
+package com.example.exercise.util.Response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,12 +6,9 @@ import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 
-
 @AllArgsConstructor
 @Data
-public class LoginSuccessResponse {
-     
-     private String token;
+public class CreateResponse {
      
      private LocalDateTime timestamp;
      
@@ -19,4 +16,3 @@ public class LoginSuccessResponse {
      
      private String error;
 }
-

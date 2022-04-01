@@ -1,13 +1,14 @@
 package com.example.exercise.service;
 
 import com.example.exercise.dto.UserDto;
+import com.example.exercise.dto.UserIdPwDto;
 import com.example.exercise.model.entity.User;
 
 public interface UserService {
      
      User findUserDetail(String username);
      
-     UserDto saveUser(String username, String password, Boolean male, String role, int height, int weight);
+     User saveUser(UserDto userDto);
      
-     Boolean login(String username, String password);
+     Boolean login(UserIdPwDto userIdPwDto);
 }

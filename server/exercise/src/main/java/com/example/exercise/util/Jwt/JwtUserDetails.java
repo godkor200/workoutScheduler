@@ -1,4 +1,4 @@
-package com.example.exercise.util;
+package com.example.exercise.util.Jwt;
 
 import com.example.exercise.model.entity.User;
 import org.springframework.security.core.GrantedAuthority;

@@ -13,7 +13,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @IdClass(UserRoutineId.class)
-@ToString
 public class UserRoutine {
      
      @Id

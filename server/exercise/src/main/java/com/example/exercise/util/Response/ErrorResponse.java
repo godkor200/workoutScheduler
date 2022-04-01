@@ -1,4 +1,4 @@
-package com.example.exercise.util;
+package com.example.exercise.util.Response;
 
 import com.example.exercise.util.ErrorCode;
 import lombok.Getter;

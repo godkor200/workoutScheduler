@@ -4,7 +4,11 @@ import com.example.exercise.dto.RoutineDto;
 import com.example.exercise.model.entity.Routine;
 import com.example.exercise.model.entity.User;
 
+import java.util.Optional;
+
 public interface RoutineService {
+     
+     Optional<Routine> findById(Long id);
      
      Routine saveRoutine(RoutineDto routineDto);
      

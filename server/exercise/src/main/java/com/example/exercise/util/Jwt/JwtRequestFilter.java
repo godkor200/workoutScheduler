@@ -1,4 +1,4 @@
-package com.example.exercise.util;
+package com.example.exercise.util.Jwt;
 
 import com.example.exercise.service.impl.JwtUserDetailsServiceImpl;
 import io.jsonwebtoken.ExpiredJwtException;

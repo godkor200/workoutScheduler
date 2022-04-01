@@ -3,6 +3,7 @@ package com.example.exercise.dto;
 import com.example.exercise.model.entity.User;
 
 import java.time.LocalDateTime;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -20,9 +21,11 @@ import org.springframework.data.annotation.CreatedDate;
 @Builder
 public class UserDto {
      
+     @NotBlank
      @NotNull
      private String username;
      
+     @NotBlank
      @NotNull
      private String password;
      
