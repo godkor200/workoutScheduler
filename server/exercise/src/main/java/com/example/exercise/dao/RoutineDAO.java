@@ -4,6 +4,7 @@ import com.example.exercise.dto.RoutineDto;
 import com.example.exercise.model.entity.Routine;
 import com.example.exercise.model.entity.User;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface RoutineDAO {
@@ -13,5 +14,7 @@ public interface RoutineDAO {
      Routine saveRoutine(RoutineDto routine);
      
      void saveUserRoutine(User user, Routine routine);
+     
+     List<Optional<Routine>> getRoutines(String id);
      
 }

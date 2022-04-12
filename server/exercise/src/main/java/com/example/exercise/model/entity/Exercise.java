@@ -1,6 +1,7 @@
 package com.example.exercise.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -38,6 +39,7 @@ public class Exercise {
      @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
      private LocalDateTime updateAt;
      
+     @JsonManagedReference
      @OneToMany(mappedBy = "exercise")
      private List<RoutineExercise> routineExerciseList = new ArrayList<>();
      

@@ -30,7 +30,7 @@ const list = [
 
 export default function routing() {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
-
+  console.log(toggleCheckBox);
   return (
     <View>
       {list.map((e, i) => {

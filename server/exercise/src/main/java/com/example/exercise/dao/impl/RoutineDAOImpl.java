@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -49,5 +51,18 @@ public class RoutineDAOImpl implements RoutineDAO {
           newUserRoutine.setRoutine(routine);
           userRoutineRepository.save(newUserRoutine);
           
+     }
+     
+     @Override
+     public List<Optional<Routine>> getRoutines(String id) {
+          Long Uid = Long.valueOf(id);
+          List<UserRoutine> userRoutines = userRoutineRepository.findAllByUser_id(Uid);
+          List<Optional<Routine>> routines = new ArrayList<>();
+          userRoutines
+                  .forEach(e -> {
+                       routines.add(routineRepository.findById(e.getRoutine()
+                                                                .getId()));
+                  });
+          return routines;
      }
 }

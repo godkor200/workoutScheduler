@@ -14,7 +14,7 @@ type AuthSignInPayload = { username: string; password: string };
 type AuthSignUpPayload = {
   username: string;
   password: string;
-  male: string;
+  isMale: boolean;
   height: string;
   weight: string;
 };

@@ -2,6 +2,7 @@ package com.example.exercise.dto;
 
 import lombok.*;
 
+
 import java.time.LocalDate;
 
 
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 public class RoutineDto {
      
      private String routineName;
+     
      
      private LocalDate routineDate;
      

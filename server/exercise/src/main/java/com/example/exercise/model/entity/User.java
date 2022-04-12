@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Builder;
 
 import javax.persistence.*;
@@ -25,15 +26,17 @@ import org.hibernate.Hibernate;
 @Entity
 @Getter
 @Setter
-@ToString
+//@ToString
 @RequiredArgsConstructor
 @AllArgsConstructor
 //@NoArgsConstructor
 @Builder
 public class User {
      
+     
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @Column(name = "user_id")
      private Long id;
      
      private String username;
@@ -57,9 +60,9 @@ public class User {
      private String updateBy;
      
      //1:N
-     @OneToMany(mappedBy = "user")
+     @JsonManagedReference
+     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
      private List<UserRoutine> userRoutine = new ArrayList<>();
-     
      
      public User(String username, String password, Boolean male, int height, int weight, String role, LocalDateTime currentTime) {
           this.username = username;
@@ -70,6 +73,7 @@ public class User {
           this.weight = weight;
           this.createdAt = currentTime;
      }
+
 
 //     public User(String username, String password, Boolean male, int height, int weight, String role, LocalDateTime currentTime) {
 //     }

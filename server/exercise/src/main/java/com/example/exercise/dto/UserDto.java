@@ -2,7 +2,6 @@ package com.example.exercise.dto;
 
 import com.example.exercise.model.entity.User;
 
-import java.time.LocalDateTime;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -41,11 +40,6 @@ public class UserDto {
      @NotNull
      private Integer weight;
      
-     @CreatedDate
-     private LocalDateTime createdAt;
-     
-     @UpdateTimestamp
-     private LocalDateTime updateAt;
      
      public User toEntity() {
           return User.builder()
@@ -55,8 +49,6 @@ public class UserDto {
                      .height(height)
                      .weight(weight)
                      .role(role)
-                     .createdAt(createdAt)
-                     .updateAt(updateAt)
                      .build();
      }
 }

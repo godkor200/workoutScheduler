@@ -29,10 +29,11 @@ export default function registration({ navigation }: Props) {
     username: '',
     password: '',
     confirmPassword: '',
-    male: 'male',
+    isMale: true,
     height: '',
     weight: '',
   });
+
   const [genderPress, setGenderPress] = useState(false);
   const matchPw = (pw: string, confirmPw: string) =>
     pw !== confirmPw ? Alert.alert('비밀번호가 맞지 않습니다.') : false;
@@ -84,7 +85,7 @@ export default function registration({ navigation }: Props) {
               }}
               onPress={() => {
                 genderPressHandler();
-                setUserData({ ...userData, male: 'male' });
+                setUserData({ ...userData });
               }}
             >
               <Text>남자</Text>
@@ -96,7 +97,7 @@ export default function registration({ navigation }: Props) {
               }}
               onPress={() => {
                 genderPressHandler();
-                setUserData({ ...userData, male: 'famale' });
+                setUserData({ ...userData, isMale: false });
               }}
             >
               <Text>여자</Text>

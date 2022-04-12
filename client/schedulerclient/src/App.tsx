@@ -120,7 +120,7 @@ const App = ({ navigation }: Props) => {
         const option = { username: username, password: password };
         try {
           const res = await axiosInstance.post(`/api/user/signin`, option);
-          userToken = await res.data;
+          userToken = await res.data.token;
         } catch (e) {
           Alert.alert('서버가 응답하지 않습니다. 잠시후에 시도해주세요.');
         }
@@ -135,18 +135,19 @@ const App = ({ navigation }: Props) => {
         dispatch({ type: 'SIGN_IN', token: userToken });
       },
       signOut: async () => dispatch({ type: 'SIGN_OUT', token: null }),
+
       signUp: async (data: AuthSignUpPayload) => {
         let userToken = '';
         const option = {
           username: data.username,
           password: data.password,
-          male: data.male === 'famale' ? false : true,
+          male: data.isMale,
           height: data.height,
           weight: data.weight,
         };
         try {
           const res = await axiosInstance.post(`/api/user/signup`, option);
-          userToken = res.data;
+          userToken = res.data.token;
         } catch (e) {
           Alert.alert('서버가 응답하지 않습니다. 잠시후에 시도해주세요.');
         }
@@ -166,7 +167,7 @@ const App = ({ navigation }: Props) => {
   /**
    * 로그인 여부 로그인이 되어 있으면 greeting할 필요없음!
    */
-  console.log(state);
+
   return (
     <AuthContext.Provider value={{ ...state, ...authContext }}>
       <NavigationContainer>

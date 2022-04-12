@@ -57,9 +57,9 @@ public class JwtTokenUtil implements Serializable {
      }
      
      //generate token for user (토큰 생성)
-     public String generateToken(String username) {
+     public String generateToken(String username, Long id) {
           Map<String, Object> claims = new HashMap<>();
-          return doGenerateToken(claims, username);
+          return doGenerateToken(claims, username, id);
      }
      
      //while creating the token - (토큰에 정보를 넣고, 시크릿 키를 이용해서 토큰을 compact하게 만든다)
@@ -67,20 +67,17 @@ public class JwtTokenUtil implements Serializable {
      //2. Sign the JWT using the HS512 algorithm and secret key.
      //3. According to JWS Compact Serialization(https://tools.ietf.org/html/draft-ietf-jose-json-web-signature-41#section-3.1)
      //   compaction of the JWT to a URL-safe string
-     private String doGenerateToken(Map<String, Object> claims, String subject) {
+     private String doGenerateToken(Map<String, Object> claims, String subject, Long id) {
           //빌더 패턴 객체 생성시 파라미터가 필요없는 경우가 생길수도 있음 그래서 생성자를 다시 만들어 주거나 해야되는데 builder()사용하면 그럴 필요없음
           //https://mangkyu.tistory.com/163
-          System.out.println("claims" + claims);
-          System.out.println("subject" + subject);
-          System.out.println(secret);
           return Jwts.builder()
                      .setClaims(claims)
                      .setSubject(subject)
+                     .setId(id.toString())
                      .setIssuedAt(new Date(System.currentTimeMillis()))
                      .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
                      /**
                       * ES256=>HS256
-                      *
                       * */
                      .signWith(SignatureAlgorithm.HS256, secret)
                      .compact();

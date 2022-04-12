@@ -22,10 +22,10 @@ import java.util.Optional;
 @RequestMapping("/api/exercise")
 public class ExerciseController {
      
-     
+     @Autowired
      private ExerciseService exerciseService;
      
-     
+     @Autowired
      private RoutineService routineService;
      
      @Autowired

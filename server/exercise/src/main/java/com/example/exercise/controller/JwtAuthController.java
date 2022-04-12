@@ -1,5 +1,8 @@
 package com.example.exercise.controller;
 
+import com.example.exercise.model.entity.User;
+import com.example.exercise.repository.UserRepository;
+import com.example.exercise.service.UserService;
 import com.example.exercise.service.impl.JwtUserDetailsServiceImpl;
 import com.example.exercise.util.Jwt.JwtRequest;
 import com.example.exercise.util.Jwt.JwtTokenUtil;
@@ -25,12 +28,15 @@ public class JwtAuthController {
      
      private JwtUserDetailsServiceImpl userDetailsService;
      
+     private UserRepository userRepository;
+     
      @PostMapping("/api/v1/authenticate")
      public String createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
           System.out.println(authenticationRequest + "authenticationRequest");
           authenticate(authenticationRequest.getUsername(), authenticationRequest.getUsername());
-          final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
-          return jwtTokenUtil.generateToken(authenticationRequest.getUsername());
+          UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+          User user = userRepository.findByUsername(authenticationRequest.getUsername());
+          return jwtTokenUtil.generateToken(authenticationRequest.getUsername(), user.getId());
      }
      
      private void authenticate(String username, String password) throws Exception {

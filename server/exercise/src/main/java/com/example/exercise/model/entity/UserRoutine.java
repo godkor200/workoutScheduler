@@ -1,33 +1,32 @@
 package com.example.exercise.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user_routine")
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 @IdClass(UserRoutineId.class)
 public class UserRoutine {
      
      @Id
      @ManyToOne
-     @JoinColumn(name = "routine_id")
-     private Routine routine;
-     
-     @Id
-     @ManyToOne
-     @JoinColumn(name = "user_id")
+     @JsonBackReference
+     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
      private User user;
      
      @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     private Long id;
+     @ManyToOne
+     @JsonBackReference
+     @JoinColumn(name = "routine_id", referencedColumnName = "routine_id")
+     private Routine routine;
      
      
 }

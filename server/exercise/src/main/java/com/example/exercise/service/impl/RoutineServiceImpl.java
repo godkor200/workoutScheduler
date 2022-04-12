@@ -9,6 +9,7 @@ import com.example.exercise.model.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,5 +37,10 @@ public class RoutineServiceImpl implements RoutineService {
      @Override
      public void saveUserRoutine(User user, Routine routine) {
           routineDAO.saveUserRoutine(user, routine);
+     }
+     
+     @Override
+     public List<Optional<Routine>> getRoutine(String id) {
+          return routineDAO.getRoutines(id);
      }
 }

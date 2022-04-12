@@ -49,4 +49,10 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
           ErrorResponse response = new ErrorResponse(ErrorCode.USERNAME_DUPLICATION);
           return new ResponseEntity<>(response, HttpStatus.CONFLICT);
      }
+     
+     @ExceptionHandler(NotFoundException.class)
+     public final ResponseEntity<Object> NotFoundExceptions(UserDuplicateException ex, WebRequest request) {
+          ErrorResponse response = new ErrorResponse(ErrorCode.NOT_FOUND);
+          return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+     }
 }

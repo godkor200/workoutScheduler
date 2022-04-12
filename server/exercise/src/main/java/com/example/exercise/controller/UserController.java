@@ -57,7 +57,7 @@ public class UserController {
                throw new UserDuplicateException("username duplicated", ErrorCode.USERNAME_DUPLICATION);
           }
           User newUser = userService.saveUser(userDto);
-          String token = jwtTokenUtil.generateToken(username);
+          String token = jwtTokenUtil.generateToken(username, newUser.getId());
           LocalDateTime timeNow = LocalDateTime.now();
           return ResponseEntity.ok(new LoginSuccessResponse(token, timeNow, HttpStatus.CREATED, "NO"));
      }
@@ -69,7 +69,8 @@ public class UserController {
                throw new UserNotFoundException("invalid ID", ErrorCode.NOT_FOUND);
           if (!result)
                throw new WrongPasswordException("invalid Password", ErrorCode.WRONG_PASSWORD);
-          String token = jwtTokenUtil.generateToken(userIdPwDAO.getUsername());
+          User user = userService.findUserDetail(userIdPwDAO.getUsername());
+          String token = jwtTokenUtil.generateToken(userIdPwDAO.getUsername(), user.getId());
           LocalDateTime timeNow = LocalDateTime.now();
           return ResponseEntity.ok(new LoginSuccessResponse(token, timeNow, HttpStatus.FOUND, "NO"));
      }
