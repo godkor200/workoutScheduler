@@ -20,8 +20,10 @@ import java.util.Optional;
 @Service
 public class RoutineDAOImpl implements RoutineDAO {
      
+     @Autowired
      RoutineRepository routineRepository;
      
+     @Autowired
      UserRoutineRepository userRoutineRepository;
      
      @Autowired

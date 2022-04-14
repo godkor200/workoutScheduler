@@ -62,7 +62,7 @@ public class User {
      //1:N
      @JsonManagedReference
      @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-     private List<UserRoutine> userRoutine = new ArrayList<>();
+     private List<UserRoutine> userRoutine;
      
      public User(String username, String password, Boolean male, int height, int weight, String role, LocalDateTime currentTime) {
           this.username = username;
