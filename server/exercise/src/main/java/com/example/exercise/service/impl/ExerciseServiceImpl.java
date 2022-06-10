@@ -10,6 +10,9 @@ import com.example.exercise.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ExerciseServiceImpl implements ExerciseService {
      
@@ -28,6 +31,11 @@ public class ExerciseServiceImpl implements ExerciseService {
      @Override
      public Exercise saveExercise(ExerciseDto exerciseDto) {
           return exerciseDAO.saveExercise(exerciseDto);
+     }
+     
+     @Override
+     public List<Optional<Exercise>> getExercise(String id) {
+          return exerciseDAO.getExercise(id);
      }
      
      @Override

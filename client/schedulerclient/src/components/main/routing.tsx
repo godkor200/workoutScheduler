@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 const list = [
@@ -29,6 +29,10 @@ const list = [
 ];
 
 export default function routing() {
+  // useEffect(() => {
+  //   list.map
+  // }, []);
+
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   console.log(toggleCheckBox);
   return (

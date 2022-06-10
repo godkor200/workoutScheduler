@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		39AA42A6BB64EA8F7F92E7D9 /* libPods-schedulerclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9788501A4BF17E5EA185FB8D /* libPods-schedulerclient.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B2ADBEE5D297A40CE89B276A /* libPods-schedulerclient-schedulerclientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EED66D6D27AA7668D5FF65 /* libPods-schedulerclient-schedulerclientTests.a */; };
+		9C9AFDBD5153CE3D19B0A798 /* libPods-schedulerclient-schedulerclientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A00A001FAEE2E3F1415986 /* libPods-schedulerclient-schedulerclientTests.a */; };
+		A216328D8FACBC0F29140C31 /* libPods-schedulerclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E69C2CEBFB2DC8DBF7FBA1F /* libPods-schedulerclient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,32 +30,19 @@
 		00E356EE1AD99517003FC87E /* schedulerclientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = schedulerclientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* schedulerclientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = schedulerclientTests.m; sourceTree = "<group>"; };
-		0C8BB9DB1226ECBEF94FBC3C /* Pods-schedulerclient-schedulerclientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedulerclient-schedulerclientTests.release.xcconfig"; path = "Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests.release.xcconfig"; sourceTree = "<group>"; };
+		1051284CA7B5C9FE65D545C7 /* Pods-schedulerclient-schedulerclientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedulerclient-schedulerclientTests.release.xcconfig"; path = "Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* schedulerclient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedulerclient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = schedulerclient/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = schedulerclient/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = schedulerclient/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = schedulerclient/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = schedulerclient/main.m; sourceTree = "<group>"; };
-		14EED66D6D27AA7668D5FF65 /* libPods-schedulerclient-schedulerclientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedulerclient-schedulerclientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31C7184E2775A8EC00FFB4F9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		31C718502775A8EC00FFB4F9 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		31DA938827831EA30024A84C /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		31DA938927831EA30024A84C /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		31DA938A27831EA30024A84C /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Octicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		31DA938B27831EA30024A84C /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AntDesign.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		31DA938C27831EA30024A84C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		31DA938D27831EA30024A84C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		31DA938E27831EA30024A84C /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		31DA938F27831EA30024A84C /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		31DA939027831EA30024A84C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		31DA939127831EA30024A84C /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		1ACFF97973CDBFE843FAB65B /* Pods-schedulerclient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedulerclient.debug.xcconfig"; path = "Target Support Files/Pods-schedulerclient/Pods-schedulerclient.debug.xcconfig"; sourceTree = "<group>"; };
+		1E69C2CEBFB2DC8DBF7FBA1F /* libPods-schedulerclient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedulerclient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A00A001FAEE2E3F1415986 /* libPods-schedulerclient-schedulerclientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedulerclient-schedulerclientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		316ABD7452D092A6A2DE691F /* Pods-schedulerclient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedulerclient.release.xcconfig"; path = "Target Support Files/Pods-schedulerclient/Pods-schedulerclient.release.xcconfig"; sourceTree = "<group>"; };
 		31DA939227831EA30024A84C /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		31DA939327831EA30024A84C /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		31DA939427831EA30024A84C /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		31DA939527831EA30024A84C /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		31DA939627831EA30024A84C /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		31DA939727831EA30024A84C /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		3D83B14A9C5A4183AEF281D2 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		42148401942F4A36ABD5ED3C /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		45DE89A467024BB58AE6B32A /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
@@ -64,20 +51,17 @@
 		7CC9376A635443B68A1DBB85 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = schedulerclient/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8742993745804430BD447B9D /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		8A3297829C247F35C839AE16 /* Pods-schedulerclient-schedulerclientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedulerclient-schedulerclientTests.debug.xcconfig"; path = "Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91968F2144574226A4732B4D /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		9788501A4BF17E5EA185FB8D /* libPods-schedulerclient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-schedulerclient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EA7AE5432E4FA89E4BF857 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		A78CD443559C4EC1AFA93C04 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		AA9B4979DCA4453AA6520345 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		C508A47348829AB797540794 /* Pods-schedulerclient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedulerclient.release.xcconfig"; path = "Target Support Files/Pods-schedulerclient/Pods-schedulerclient.release.xcconfig"; sourceTree = "<group>"; };
 		CD588C4DF2CB44579E026CE2 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		CEEF062FDDA249D8AEF16A51 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		E52612AD86CA439C8B600919 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		E6FA6E9D4197469888AC30F6 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		E70BD2F15CDC30CD03062CDC /* Pods-schedulerclient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedulerclient.debug.xcconfig"; path = "Target Support Files/Pods-schedulerclient/Pods-schedulerclient.debug.xcconfig"; sourceTree = "<group>"; };
 		E8604E90482E4E1E94B4F3B3 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FD30B633147B3F242722F445 /* Pods-schedulerclient-schedulerclientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedulerclient-schedulerclientTests.debug.xcconfig"; path = "Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2ADBEE5D297A40CE89B276A /* libPods-schedulerclient-schedulerclientTests.a in Frameworks */,
+				9C9AFDBD5153CE3D19B0A798 /* libPods-schedulerclient-schedulerclientTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39AA42A6BB64EA8F7F92E7D9 /* libPods-schedulerclient.a in Frameworks */,
+				A216328D8FACBC0F29140C31 /* libPods-schedulerclient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				9788501A4BF17E5EA185FB8D /* libPods-schedulerclient.a */,
-				14EED66D6D27AA7668D5FF65 /* libPods-schedulerclient-schedulerclientTests.a */,
+				1E69C2CEBFB2DC8DBF7FBA1F /* libPods-schedulerclient.a */,
+				26A00A001FAEE2E3F1415986 /* libPods-schedulerclient-schedulerclientTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,10 +185,10 @@
 		C61B542BE85A22DF1C3258BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E70BD2F15CDC30CD03062CDC /* Pods-schedulerclient.debug.xcconfig */,
-				C508A47348829AB797540794 /* Pods-schedulerclient.release.xcconfig */,
-				FD30B633147B3F242722F445 /* Pods-schedulerclient-schedulerclientTests.debug.xcconfig */,
-				0C8BB9DB1226ECBEF94FBC3C /* Pods-schedulerclient-schedulerclientTests.release.xcconfig */,
+				1ACFF97973CDBFE843FAB65B /* Pods-schedulerclient.debug.xcconfig */,
+				316ABD7452D092A6A2DE691F /* Pods-schedulerclient.release.xcconfig */,
+				8A3297829C247F35C839AE16 /* Pods-schedulerclient-schedulerclientTests.debug.xcconfig */,
+				1051284CA7B5C9FE65D545C7 /* Pods-schedulerclient-schedulerclientTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -239,11 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "schedulerclientTests" */;
 			buildPhases = (
-				F705DD5F23A793BF8B799E92 /* [CP] Check Pods Manifest.lock */,
+				A6FAA25F74B9E0D79C86A8ED /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				4C653DC85DFDABF2D6A763F3 /* [CP] Copy Pods Resources */,
+				ABF0AC8690E69DD1D7DC8B6A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,13 +243,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "schedulerclient" */;
 			buildPhases = (
-				95F90EB71DBF36E84D90DF31 /* [CP] Check Pods Manifest.lock */,
+				58865735B1F45B866DCC9870 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				5D35E19677EBF8C89C19D731 /* [CP] Copy Pods Resources */,
+				E6EE34A6186E0AF247BF7168 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -346,41 +330,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		4C653DC85DFDABF2D6A763F3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5D35E19677EBF8C89C19D731 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-schedulerclient/Pods-schedulerclient-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-schedulerclient/Pods-schedulerclient-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-schedulerclient/Pods-schedulerclient-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		95F90EB71DBF36E84D90DF31 /* [CP] Check Pods Manifest.lock */ = {
+		58865735B1F45B866DCC9870 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,7 +352,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F705DD5F23A793BF8B799E92 /* [CP] Check Pods Manifest.lock */ = {
+		A6FAA25F74B9E0D79C86A8ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -422,6 +372,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF0AC8690E69DD1D7DC8B6A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-schedulerclient-schedulerclientTests/Pods-schedulerclient-schedulerclientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6EE34A6186E0AF247BF7168 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-schedulerclient/Pods-schedulerclient-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-schedulerclient/Pods-schedulerclient-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-schedulerclient/Pods-schedulerclient-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -476,7 +460,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD30B633147B3F242722F445 /* Pods-schedulerclient-schedulerclientTests.debug.xcconfig */;
+			baseConfigurationReference = 8A3297829C247F35C839AE16 /* Pods-schedulerclient-schedulerclientTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -503,7 +487,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C8BB9DB1226ECBEF94FBC3C /* Pods-schedulerclient-schedulerclientTests.release.xcconfig */;
+			baseConfigurationReference = 1051284CA7B5C9FE65D545C7 /* Pods-schedulerclient-schedulerclientTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -527,7 +511,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E70BD2F15CDC30CD03062CDC /* Pods-schedulerclient.debug.xcconfig */;
+			baseConfigurationReference = 1ACFF97973CDBFE843FAB65B /* Pods-schedulerclient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -553,7 +537,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C508A47348829AB797540794 /* Pods-schedulerclient.release.xcconfig */;
+			baseConfigurationReference = 316ABD7452D092A6A2DE691F /* Pods-schedulerclient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

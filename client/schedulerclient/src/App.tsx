@@ -47,8 +47,8 @@ export const AuthContext = createContext<AuthContextType>({
   signOut: () => {},
 });
 
-const axiosInstance = axios.create({
-  baseURL: 'http:localhost:8080',
+export const axiosInstance = axios.create({
+  baseURL: 'http://3.34.91.5:8080',
   withCredentials: true,
 });
 
@@ -127,6 +127,10 @@ const App = ({ navigation }: Props) => {
         // 받아온 토큰 저장
         try {
           await AsyncStorage.setItem('@storage_Key', userToken);
+          // axiosInstance.interceptors.request.use(async (config) => {
+          //   config.headers = { Authorization: 'Bearer ' + userToken };
+          //   return config;
+          // });
           return 'OK';
         } catch (e) {
           //TODO: 토큰 저장 오류 처리

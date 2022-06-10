@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "exercise",
+      "cwd": ".",
+      "args": [
+        "-jar",
+        "./build/libs/exercise-0.0.1-SNAPSHOT.jar"
+      ],
+      "env": {
+      },
+      "script": "/usr/bin/java",
+      "node_args": [],
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "exec_interpreter": "none",
+      "exec_mode": "fork"
+    }
+  ]
+}
