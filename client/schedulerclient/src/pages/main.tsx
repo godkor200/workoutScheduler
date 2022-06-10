@@ -14,6 +14,9 @@ import {
   ScrollView,
   Easing,
 } from 'react-native';
+import { axiosInstance } from 'App';
+import useFetch from '@utils/fetch';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Main() {
   const [date, setDate] = useState(moment().utc(true).toDate());
@@ -25,6 +28,8 @@ export default function Main() {
     outputRange: ['0deg', '180deg'],
   });
 
+  useFetch(`/api/routine`);
+  console.log(date);
   const up = () => {
     Animated.timing(deg, {
       toValue: 1,
