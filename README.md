@@ -39,7 +39,6 @@ BUT 1차 마일스톤은 최소기능제품으로 앱출시하기!
 [백엔드 배포 주소](http://3.34.91.5:8080/)
 
 [피그마 기획](https://www.figma.com/file/WrY1AXtoFtoKrMuRmcZrvL/What-Day-APP?node-id=1%3A3)
-[백엔드 배포 주소](http://3.34.91.5:8080/)
 
 ## 시작하기
 
