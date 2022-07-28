@@ -128,24 +128,8 @@
 		31C718312775A54400FFB4F9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				31DA938B27831EA30024A84C /* AntDesign.ttf */,
-				31DA939727831EA30024A84C /* Entypo.ttf */,
-				31DA938F27831EA30024A84C /* EvilIcons.ttf */,
-				31DA939327831EA30024A84C /* Feather.ttf */,
-				31DA938D27831EA30024A84C /* FontAwesome.ttf */,
 				31DA939227831EA30024A84C /* FontAwesome5_Brands.ttf */,
-				31DA938827831EA30024A84C /* FontAwesome5_Regular.ttf */,
 				31DA939627831EA30024A84C /* FontAwesome5_Solid.ttf */,
-				31DA938927831EA30024A84C /* Fontisto.ttf */,
-				31DA939527831EA30024A84C /* Foundation.ttf */,
-				31DA938E27831EA30024A84C /* Ionicons.ttf */,
-				31DA938C27831EA30024A84C /* MaterialCommunityIcons.ttf */,
-				31DA939427831EA30024A84C /* MaterialIcons.ttf */,
-				31DA938A27831EA30024A84C /* Octicons.ttf */,
-				31DA939027831EA30024A84C /* SimpleLineIcons.ttf */,
-				31DA939127831EA30024A84C /* Zocial.ttf */,
-				31C7184E2775A8EC00FFB4F9 /* FontAwesome5_Brands.ttf */,
-				31C718502775A8EC00FFB4F9 /* FontAwesome5_Solid.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";

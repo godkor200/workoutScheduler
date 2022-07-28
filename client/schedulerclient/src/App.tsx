@@ -27,7 +27,6 @@ import {
   AuthType,
   Token,
 } from 'types/auth.interface';
-import Greeting from '@pages/greeting';
 import MainStackScreen from '@components/mainStackScreen';
 import Registration from '@pages/registration';
 import Login from '@pages/login';
@@ -126,11 +125,12 @@ const App = ({ navigation }: Props) => {
         }
         // 받아온 토큰 저장
         try {
-          await AsyncStorage.setItem('@storage_Key', userToken);
-          // axiosInstance.interceptors.request.use(async (config) => {
-          //   config.headers = { Authorization: 'Bearer ' + userToken };
-          //   return config;
-          // });
+          AsyncStorage.setItem('accessToken', userToken);
+
+          AsyncStorage.getItem('accessToken', (err, result) => {
+            axiosInstance.defaults.headers.common['Authorization'] =
+              'Bearer ' + result;
+          });
           return 'OK';
         } catch (e) {
           //TODO: 토큰 저장 오류 처리

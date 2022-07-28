@@ -28,6 +28,9 @@ export default function Main() {
     outputRange: ['0deg', '180deg'],
   });
 
+  AsyncStorage.getItem('accessToken', (err, result) => {
+    console.log('main', result);
+  });
   useFetch(`/api/routine`);
   console.log(date);
   const up = () => {
